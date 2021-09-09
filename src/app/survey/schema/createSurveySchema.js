@@ -1,5 +1,5 @@
 const createSurveySchema = {
-  tags: ["CreateSurvey"],
+  tags: ["Survey"],
   summary: "This api is used to create Survey",
   description: "This api is used to create Survey",
   body: {

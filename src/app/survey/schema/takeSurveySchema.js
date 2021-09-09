@@ -1,5 +1,5 @@
 const takeSurveySchema = {
-  tags: ["TakeSurvey"],
+  tags: ["Survey"],
   summary: "This api is used to take survey",
   description: "This api is used to take survey",
   body: {

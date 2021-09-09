@@ -12,7 +12,7 @@ const swaggerSchema = {
       url: "https://swagger.io",
       description: "Find more info here",
     },
-    host: "localhost:8080",
+    host: "localhost:4444",
     schemes: ["http"],
     consumes: ["application/json"],
     produces: ["application/json"],

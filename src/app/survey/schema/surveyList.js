@@ -1,5 +1,5 @@
 const schema = {
-  tags: ["CreateSurvey"],
+  tags: ["Survey"],
   summary: "This api is list all the survey questionnaire",
   description: "This api is list all the survey questionnaire",
   response: {
