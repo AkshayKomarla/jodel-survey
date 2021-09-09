@@ -1,6 +1,6 @@
 # Jodel's Survey API
 
-[![Lint](https://github.com/AkshayKomarla/jodel-survey/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/AkshayKomarla/jodel-survey/actions/workflows/ci.yaml)
+[![Lint](https://github.com/AkshayKomarla/jodel-survey/actions/workflows/ci.yaml/badge.svg)](https://github.com/AkshayKomarla/jodel-survey/actions/workflows/ci.yaml)
 
 This service is created for taking surveys from jodel's employees.
 This project is built using [Fastify Js](https://github.com/fastify/fastify)
