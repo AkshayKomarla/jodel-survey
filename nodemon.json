@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "*.test.js",
+    "integrationTests/**/*",
+    "jest/**/*",
+    "**/__tests__/**/*.js",
+    "**/__mocks__/**/*.js",
+    "README.md"
+  ]
+}

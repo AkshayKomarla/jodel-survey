@@ -1,0 +1,14 @@
+.env
+.npmrc
+.nyc_output
+build/
+coverage s
+docs
+node_modules
+tmp
+
+# OS / IDE
+.DS_Store
+.history
+.idea/
+.vscode/

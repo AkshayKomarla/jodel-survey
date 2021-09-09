@@ -1,0 +1,57 @@
+{
+  "name": "jodel-survey",
+  "version": "1.0.0",
+  "description": "survery service for jodel",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix",
+    "dev": "NODE_ENV=dev nodemon -e js index | pino-pretty -c -t --levelKey severity",
+    "start": "node index",
+    "test": "ENVIRONMENT=dev npm run test:unit",
+    "test:unit": "NODE_ENV=test LOG_LEVEL=silent jest -c jest.config.unit.js --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/falabella-gitlab/catalyst/bu/falabella/b2c/services/falabella-checkout-service"
+  },
+  "keywords": [],
+  "author": "akshay",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "pino-pretty": "^4.3.0",
+    "prettier-eslint": "^12.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint && npm run test"
+    }
+  },
+  "dependencies": {
+    "env-schema": "^3.3.0",
+    "fastify": "^3.20.2",
+    "fastify-cors": "^6.0.2",
+    "fastify-env": "^2.1.1",
+    "fastify-helmet": "^5.3.2",
+    "fastify-routes": "^3.0.1",
+    "fastify-swagger": "^4.9.1",
+    "pino": "^6.13.1",
+    "uuid": "^8.3.2"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node"
+  }
+}
