@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+name: CI API
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git fetch --depth=1 origin
+      - run: npm install
+      - uses: actions/cache@v1
+        id: cache-build
+        with:
+          path: "."
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          path: "."
+      - run: npm run lint

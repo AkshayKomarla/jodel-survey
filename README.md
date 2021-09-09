@@ -1,6 +1,7 @@
 # Jodel's Survey API
 
-This service is created for taking surveys from jodel's employees
+This service is created for taking surveys from jodel's employees.
+This project is built using [Fastify Js](https://github.com/fastify/fastify)
 
 ## Local environment setup
 
