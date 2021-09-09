@@ -33,3 +33,8 @@ http://localhost:4444/documentation/static/index.html
 ## Docker
 
 The `Dockerfile` is based on `alpine:3.11` image. It is assumed that dependencies are built prior running the container.
+
+## CI Pipeline
+
+This project uses `github actions` to check Lint issues for every commit and pull request to master
+The CI config can be found in path `./.github/workflows/ci.yaml`
