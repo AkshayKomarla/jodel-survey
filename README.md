@@ -32,6 +32,10 @@ Start the project and visit the following url
 
 http://localhost:4444/documentation/static/index.html
 
+### Postman Collection
+
+Use the postman collection located here [jodel survey api's](./jodel_survey.postman_collection.json)
+
 ## Docker
 
 The `Dockerfile` is based on `alpine:3.11` image. It is assumed that dependencies are built prior running the container.
