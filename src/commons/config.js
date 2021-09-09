@@ -47,7 +47,7 @@ const swaggerSchema = {
 const appSchema = {
   type: "object",
   properties: {
-    ENVIRONMENT: {
+    NODE_ENV: {
       type: "string",
       default: "dev",
     },
