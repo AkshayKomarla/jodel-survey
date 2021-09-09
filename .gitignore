@@ -2,7 +2,7 @@
 .npmrc
 .nyc_output
 build/
-coverage s
+coverage
 docs
 node_modules
 tmp
