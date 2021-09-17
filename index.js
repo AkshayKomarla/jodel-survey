@@ -5,6 +5,7 @@ const fastifyRoutes = require("fastify-routes");
 const fastifyHelmet = require("fastify-helmet");
 const routes = require("./src/app/routes");
 const { config, swaggerSchema } = require("./src/commons/config");
+const { makeAttachLoggerWithRequestContext } = require("./src/lib/appLogging");
 const {
   requestSerializer,
   responseSerializer,
@@ -53,6 +54,8 @@ function create() {
 
   // Routes
   fastify.register(routes);
+
+  fastify.addHook("onRequest", makeAttachLoggerWithRequestContext(logger));
 
   return fastify;
 }

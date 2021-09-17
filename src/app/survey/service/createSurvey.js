@@ -14,6 +14,8 @@ exports.createSurvey = async (request) => {
     };
   }
 
+  request.log.info("log create survey test");
+
   const response = await createSurvey({ name, options });
   return { statusCode: 201, response };
 };
