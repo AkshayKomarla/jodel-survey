@@ -38,7 +38,19 @@ Use the postman collection located here [jodel survey api's](./jodel_survey.post
 
 ## Docker
 
-The `Dockerfile` is based on `alpine:3.11` image. It is assumed that dependencies are built prior running the container.
+The `Dockerfile` is based on `alpine:3.11` image. Multistage builds are used to create optimized version of docker file. It is assumed that dependencies are built prior running the container.
+
+Build Docker Image
+
+```shell
+docker build -t jodel-survey .
+```
+
+Run Docker Image.
+
+```shell
+docker run -p 4000:4444 jodel-survey
+```
 
 ## CI Pipeline
 

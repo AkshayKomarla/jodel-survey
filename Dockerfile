@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
 
+RUN npm i
+
 COPY . /app
 
 FROM alpine:3.11
@@ -20,7 +22,8 @@ WORKDIR /app
 
 ENV PORT=4444 \
     NODE_ENV=production \
-    LOG_LEVEL=info
+    LOG_LEVEL=info \
+    HOST=0.0.0.0
 
 EXPOSE $PORT
 
