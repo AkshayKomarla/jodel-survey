@@ -19,7 +19,6 @@ function makeAttachLoggerWithRequestContext(logger) {
       req.log.info(
         {
           reqURLPattern: res.context.config.url || req.raw.url,
-          context: "BU<-Client",
         },
         `Request received for ${req.raw.method} ${req.raw.url}`
       );

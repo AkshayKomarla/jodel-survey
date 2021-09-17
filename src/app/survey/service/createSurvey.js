@@ -14,8 +14,6 @@ exports.createSurvey = async (request) => {
     };
   }
 
-  // request.log.error("asdsa");
-
   const response = await createSurvey({ name, options });
   return { statusCode: 201, response };
 };
