@@ -1,117 +1,98 @@
 {
-	"info": {
-		"_postman_id": "82073d23-c6f6-4c66-a0ab-b5cdd64e5d71",
-		"name": "jodel's survey",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "create survey",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "x-request-id",
-						"value": "23424",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"old survey\",\n    \"options\": [\n        {\n            \"description\": \"old op 1\"\n        },\n        {\n            \"description\": \"old op 2\"\n        },\n        {\n            \"description\": \"old op 3\"\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4444/v1/survey",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4444",
-					"path": [
-						"v1",
-						"survey"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "list all survey questionnaire",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:4444/v1/survey/list",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4444",
-					"path": [
-						"v1",
-						"survey",
-						"list"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "take survey",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "[\n    {\n        \"question\": {\n            \"id\": \"9fa78502-be82-421d-96e0-9958c6830861\",\n            \"name\": \"new survey\"\n        },\n        \"answer\": {\n            \"id\": \"3222192d-22cd-47b6-ad33-0bc41f342d7d\",\n            \"name\": \"op 111\"\n        }\n    },\n    {\n        \"question\": {\n            \"id\": \"63734e93-4bcb-421c-b2df-b5eb57d66a97\",\n            \"name\": \"old survey\"\n        },\n        \"answer\": {\n            \"id\": \"4f046eec-a038-4faa-9056-9d4959ba0ad4\",\n            \"name\": \"op 234\"\n        }\n    }\n]",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:4444/v1/survey/take-survey",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4444",
-					"path": [
-						"v1",
-						"survey",
-						"take-survey"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get survey result",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:4444/v1/survey/9fa78502-be82-421d-96e0-9958c6830861/result",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4444",
-					"path": [
-						"v1",
-						"survey",
-						"9fa78502-be82-421d-96e0-9958c6830861",
-						"result"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "82073d23-c6f6-4c66-a0ab-b5cdd64e5d71",
+    "name": "jodel's survey",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "create survey",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-request-id",
+            "value": "23424",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"new survey 1\",\n    \"options\": [\n        {\n            \"description\": \"old op 1\"\n        },\n        {\n            \"description\": \"old op 2\"\n        },\n        {\n            \"description\": \"old op 3\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4444/v1/survey",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4444",
+          "path": ["v1", "survey"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "list all survey questionnaire",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4444/v1/survey/list",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4444",
+          "path": ["v1", "survey", "list"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "take survey",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n    {\n        \"questionId\": \"8826d24d-1962-40f3-bab5-735ac3a08a7c\",\n        \"answerId\": \"b0a9fa1a-7723-42d2-b83b-6b65f0f0dc11\"\n    },\n    {\n        \"questionId\": \"8826d24d-1962-40f3-bab5-735ac3a08a7c\",\n        \"answerId\": \"b0a9fa1a-7723-42d2-b83b-6b65f0f0dc11\"\n    }\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4444/v1/survey/take-survey",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4444",
+          "path": ["v1", "survey", "take-survey"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get survey result",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4444/v1/survey/8826d24d-1962-40f3-bab5-735ac3a08a7c/result",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4444",
+          "path": [
+            "v1",
+            "survey",
+            "8826d24d-1962-40f3-bab5-735ac3a08a7c",
+            "result"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
 }
