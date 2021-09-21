@@ -6,33 +6,15 @@ const takeSurveySchema = {
     type: "array",
     items: {
       type: "object",
-      required: ["question", "answer"],
+      required: ["questionId", "answerId"],
       properties: {
-        question: {
-          type: "object",
-          required: ["id", "name"],
-          properties: {
-            id: {
-              type: "string",
-              format: "uuid",
-            },
-            name: {
-              type: "string",
-            },
-          },
+        questionId: {
+          type: "string",
+          format: "uuid",
         },
-        answer: {
-          type: "object",
-          required: ["id", "name"],
-          properties: {
-            id: {
-              type: "string",
-              format: "uuid",
-            },
-            name: {
-              type: "string",
-            },
-          },
+        answerId: {
+          type: "string",
+          format: "uuid",
         },
       },
     },

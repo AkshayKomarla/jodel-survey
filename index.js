@@ -27,7 +27,7 @@ function getSecurityOptions() {
   // Bypass CSP violations in Swagger UI
   // https://github.com/swagger-api/swagger-ui/issues/3370
   const defaultSrc =
-    config.ENVIRONMENT === "dev" ? "'self' 'unsafe-inline'" : "'self'";
+    config.NODE_ENV === "dev" ? "'self' 'unsafe-inline'" : "'self'";
   return {
     noCache: true,
     contentSecurityPolicy: {

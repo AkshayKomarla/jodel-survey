@@ -50,13 +50,9 @@ const createSurvey = async ({ name, options }) => {
   return survey;
 };
 
-const saveSurveyData = async ({ requestSurveyList }) => {
-  for (let index = 0; index < requestSurveyList.length; index++) {
-    const rSurvey = requestSurveyList[index];
-
-    surveyResult[rSurvey.question.id].stats.hits++;
-    surveyResult[rSurvey.question.id].stats.options[rSurvey.answer.id].hits++;
-  }
+const saveSurveyData = async ({ questionId, answerId }) => {
+  surveyResult[questionId].stats.hits++;
+  surveyResult[questionId].stats.options[answerId].hits++;
 
   return true;
 };

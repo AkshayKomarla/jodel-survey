@@ -8,33 +8,38 @@ const { ERROR_CODES } = require("../../../commons/constants");
 exports.takeSurvey = async (request) => {
   const requestSurveyList = request.body;
 
-  for (let index = 0; index < requestSurveyList.length; index++) {
-    const requestSurvey = requestSurveyList[index];
+  try {
+    await Promise.all(
+      requestSurveyList.map(async (r) => {
+        const survey = await surveyIdExists(r.questionId);
+        if (survey && Object.keys(survey).length > 0) {
+          const option = await surveyOptionExists(survey, r.answerId);
 
-    const survey = await surveyIdExists(requestSurvey.question.id);
-    if (survey && Object.keys(survey).length > 0) {
-      const option = await surveyOptionExists(survey, requestSurvey.answer.id);
+          if (!option) {
+            throw new Error(
+              `Survey answer id: "${r.answerId}" for survey id "${r.questionId}" doesn't exist`
+            );
+          }
+        } else {
+          throw new Error(`Survey id: "${r.questionId}" doesn't exist`);
+        }
+      })
+    );
 
-      if (!option) {
-        return {
-          statusCode: 400,
-          response: {
-            code: ERROR_CODES.NOT_FOUND,
-            message: `Survey answer Id: "${requestSurvey.answer.id}" for survey name "${requestSurvey.question.name}" doesn't exist`,
-          },
-        };
-      }
-    } else {
-      return {
-        statusCode: 400,
-        response: {
-          code: ERROR_CODES.NOT_FOUND,
-          message: `Survey Id: "${requestSurvey.question.id}" doesn't exist`,
-        },
-      };
-    }
+    await Promise.all(
+      requestSurveyList.map(async (r) =>
+        saveSurveyData({ questionId: r.questionId, answerId: r.answerId })
+      )
+    );
+  } catch (error) {
+    return {
+      statusCode: 400,
+      response: {
+        code: ERROR_CODES.NOT_FOUND,
+        message: error,
+      },
+    };
   }
 
-  await saveSurveyData({ requestSurveyList });
   return { statusCode: 201, response: { success: true } };
 };

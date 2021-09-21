@@ -9,6 +9,7 @@ exports.createSurveyHandler = async (request, reply) => {
 };
 
 exports.takeSurveyHandler = async (request, reply) => {
+  // perform additional validations
   const { statusCode, response } = await takeSurvey(request);
   return reply.code(statusCode).send(response);
 };

@@ -8,7 +8,7 @@
     "lint:fix": "npm run lint -- --fix",
     "dev": "NODE_ENV=dev nodemon -e js index | pino-pretty -c -t --levelKey severity",
     "start": "node index",
-    "test": "ENVIRONMENT=dev npm run test:unit",
+    "test": "NODE_ENV=dev npm run test:unit",
     "test:unit": "NODE_ENV=test LOG_LEVEL=silent jest -c jest.config.unit.js --passWithNoTests"
   },
   "repository": {
